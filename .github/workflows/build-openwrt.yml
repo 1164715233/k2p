@@ -81,12 +81,6 @@ jobs:
       run: cd openwrt && ./scripts/feeds install -a
       
       
-    - name: Clone k2p wifi driver source code
-      run: |
-        git clone --depth 1 https://github.com/MeIsReallyBa/k2p-openwrt-mt7615_5.0.2.0 -b master k2p-openwrt-mt7615_5.0.2.0
-        cp -r k2p-openwrt-mt7615_5.0.2.0/mtk openwrt/pacagke
-
-
     - name: Load custom configuration
       run: |
         [ -e files ] && mv files openwrt/files
